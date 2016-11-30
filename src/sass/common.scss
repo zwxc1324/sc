@@ -23,10 +23,16 @@ img,video{
 	max-width:100%;
 	border:none;
 }
+input{
+	vertical-align:middle;
+}
 fieldset{
 	border: none;
 }
 a{text-decoration:none;color: #333;}
+a:hover,a:focus{
+	color: #425ce1;
+}
 html{font-size: 14px;}
 body,input[type=text],
 input[type=url],
@@ -34,7 +40,7 @@ input[type=search],
 input[type=tel],
 input[type=password],
 select,textarea{
-	font:1em/1.3 Malgun Gothic,"맑은고딕",gulim,"굴림",dotum,"돋음",sans-serif;
+	font:1em/1.3 arial,Malgun Gothic,"맑은고딕",gulim,"굴림",dotum,"돋음",sans-serif;
 	color: #333;
 }
 h1,h2,h3,h4,h5,h6,strong,em,address{
@@ -42,9 +48,217 @@ h1,h2,h3,h4,h5,h6,strong,em,address{
 	font-weight: normal;
 	font-style: normal;
 }
-.blind{
+.blind,legend{
 	position: absolute;
 	left: -9999px;
 }
+.clearFix:after{
+	content:'';
+	display: block;
+	clear:both;
+}
+.clearFix{*zoom:1;}
 
+#header{
+	position: relative;
+	border-bottom: 1px solid #999;
+	box-shadow:0 2px 3px rgba(0,0,0,0.5);
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	#gnb{
+		li{
+			float: left;
+			padding:0 20px;
+			height: 53px;
+		}
+		figure{
+			font-size: 12px;
+			text-align: center;
+			&:before{
+				font-size: 22px;
+			}
+		}
+		.ico_font_1:before{
+			content: "\f064";
+		}
+		.ico_font_2:before{
+			content: "\e810";
+		}
+		.ico_font_3:before{
+			content: "\e80e";
+		}
+		.ico_font_4:before{
+			content: "\e80f";
+		}
+		.ico_font_5:before{
+			content: "\e811";
+		}
+	}
+}
+
+#header h1{
+	background-color: #5580cf;
+	text-align: center;
+	padding:8px 0;
+	margin-bottom: 20px;
+}
+.login{
+	position: absolute;
+	top: 3px; 
+	right: 5px;
+	font-size: 10px;
+	a{
+		display: block;
+		text-align: center;
+		width: 69px;height: 28px;
+		line-height: 28px;
+		color: #fff;
+		text-shadow:0 0 2px rgba(0,0,0,0.7);
+		border: 1px solid rgba(29,45,27,0.8);
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5580cf+0,7697cc+100 */
+		background: #5580cf; /* Old browsers */
+		background: -moz-linear-gradient(top, #5580cf 0%, #7697cc 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #5580cf 0%,#7697cc 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #5580cf 0%,#7697cc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5580cf', endColorstr='#7697cc',GradientType=0 ); /* IE6-9 */
+	}
+}
+
+#container{
+	padding-bottom: 20px;
+}
+#footer{
+	background-color: #f4f7fa;
+	border-top: 1px solid #cad3e4;
+	padding:10px 0;
+	text-align: center;
+	.child_inline li{
+		display: inline-block;
+		margin-bottom: 10px;
+		padding-left:15px;
+		position: relative;
+		&:before{
+			content: "";
+			display: inline-block;
+			width: 1px;
+			height: 18px;
+			background-color: #cad3e4;
+			position: absolute;
+			top: 1px;
+			left: 6px;
+		}
+		&:first-child{
+			padding:0;
+			&:before{
+				content: none;
+			}
+		}
+	}
+}
+
+/*타이틀서식*/
+.tit_1{
+	font-size: 18px;
+	color: #294b8a;
+	font-weight: bold;
+	margin-bottom: 15px;
+	padding-left: 10px;
+}
+
+.grid{ 
+	.row:after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+	.row{
+		*zoom:1;
+	}
+
+	*[class*="col_pc_"]{
+		float: left;
+	}
+
+	.col_pc_1{
+		width: 8.33333%;
+	}
+	.col_pc_2{
+		width: 8.33333%*2;
+	}
+	.col_pc_3{
+		width: 8.33333%*3;
+	}
+	.col_pc_4{
+		width: 8.33333%*4;
+	}
+	.col_pc_5{
+		width: 8.33333%*5;
+	}
+	.col_pc_6{
+		width: 8.33333%*6;
+	}
+	.col_pc_7{
+		width: 8.33333%*7;
+	}
+	.col_pc_8{
+		width: 8.33333%*8;
+	}
+	.col_pc_9{
+		width: 8.33333%*9;
+	}
+	.col_pc_10{
+		width: 8.33333%*10;
+	}
+	.col_pc_11{
+		width: 8.33333%*11;
+	}
+	.col_pc_12{
+		width: 8.3333%*12;
+	}
+	.col{
+		padding:0 10px;
+	}
+}
+
+@media (max-width:480px) {
+	.grid{
+		float: none;
+		.col_phone_1{
+			width: 8.33333%;
+		}
+		.col_phone_2{
+			width: 8.33333%*2;
+		}
+		.col_phone_3{
+			width: 8.33333%*3;
+		}
+		.col_phone_4{
+			width: 8.33333%*4;
+		}
+		.col_phone_5{
+			width: 8.33333%*5;
+		}
+		.col_phone_6{
+			width: 8.33333%*6;
+		}
+		.col_phone_7{
+			width: 8.33333%*7;
+		}
+		.col_phone_8{
+			width: 8.33333%*8;
+		}
+		.col_phone_9{
+			width: 8.33333%*9;
+		}
+		.col_phone_10{
+			width: 8.33333%*10;
+		}
+		.col_phone_11{
+			width: 8.33333%*11;
+		}
+		.col_phone_12{
+			width: 8.3333%*12;
+		}
+	}
+}
 

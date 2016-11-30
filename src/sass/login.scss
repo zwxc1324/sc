@@ -1,0 +1,63 @@
+@charset "utf-8";
+#header{
+	h1{
+		margin: 0;
+	}
+	padding: 0;
+}
+#gnb{
+	display: none;
+}
+#container{
+	padding-left:15px;
+	padding-right: 15px;
+}
+form fieldset>div{
+	background-color: #f5f6f7;
+	padding:15px;
+	p:first-child,
+	p:first-child+p{
+		position: relative;
+		margin-bottom: 3px;
+		padding-left: 60px;
+	}
+	p:first-child+p+p{
+		padding:10px 0px 15px 60px;
+		#save_id+label{
+			margin-right: 10px;
+		}
+	}
+	p:first-child+p+p+p{
+		border-top: 1px solid #dee2e5;
+		margin: 0 -15px;
+		margin-bottom: 50px;
+		padding:15px 40px 0;
+		font-size: 12px;
+		position: relative;
+		&:after{
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 1px;
+			border-bottom: 1px solid #fff;
+		}
+	}
+	label[for=user_id],
+	label[for=user_pw]{
+		position: absolute;
+		top: 5px;
+		left: 0;
+		color: #294b8a;
+		font-weight: bold;
+	}
+	#user_id,#user_pw{
+		height: 26px;
+		line-height: 26px;
+		width: 100%;
+	}
+	+p{
+		text-align: center;
+	}
+}
