@@ -1,13 +1,33 @@
 <?include "inc/top.html"?>
   <title>SiteName|PageName</title>
   <link rel="stylesheet" type="text/css" href="css/login.css" media="all">
+  <script type="text/javascript">
+  	window.onload=function() {
+  		var login_b = document.querySelector("#login_b");
+
+  			login_b.onsubmit = function(a){
+  			a.preventDefault();
+  			var ts = this;
+  			var user_id = ts.user_id;
+  			var reg_id = /^[a-z]{1}\w{4,12}$/g;
+  			var result_id = reg_id.exec(user_id.value);
+  			if (result_id == null) {
+  				alert("잘못된아이디입니다");
+  				user_id.value="";
+  				user_id.focus();
+  				return false;
+  			}
+  		}
+  	}
+  </script>
  
  <body>
   <div id="wrap">
     <?include "inc/header.html"?>
      <div id="container" class="grid">
         <h3 class="tit_1">SLRCLUB LOGIN</h3>
-        <form action="#" method="post">
+        
+        <form action="#" method="post" id="login_b">
           <fieldset>
             <legend>회원 로그인</legend>
             <div>
